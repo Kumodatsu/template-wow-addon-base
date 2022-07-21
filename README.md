@@ -35,6 +35,15 @@ World of Warcraft addon structure.
 You should change the uppercase `ADDON` file names into something that fits your
 specific addon.
 
+`.github/workflows/release.yml` is a GitHub Actions file that instructs GitHub
+to automatically create a GitHub Release whenever you push a tag whose name is a
+'v' followed by a semantic version number.
+Your addon folders will be packed up into a zip file and be added as release
+assets, and the relevant section from your changelog file will be used as the
+release description, assuming it adheres to the Keep a Changelog structure.
+If you do not want this automatic release creation or wish to do it yourself,
+delete the `.github/workflows/release.yml` file.
+
 ## What you should do yourself
 - Make a repository using this template.
 Or download the source and use the files in your own project, or do whatever
@@ -42,7 +51,10 @@ else you may want to do with them.
 - Rename the `addons/ADDON` folder to something descriptive of your addon.
 Rename `addons/ADDON/ADDON.toc` and `addons/ADDON/src/ADDON.lua` accordingly.
 - Fill in the addon metadata in the `.toc` file and make sure it references the
-script in the `src` directory.
+scripts in the `src` directory.
+- Replace the occurrences of `ADDONS.zip` in `.github/workflows/release.yml`
+with a name that fits your project; this will be used to name the zip file that
+is attached to releases.
 - You need Python installed to use the copy script if you want to use it.
 - If you are using an IDE that generates configuration files or something
 similar, add them to the .gitignore file.
