@@ -1,4 +1,4 @@
-# Template for World of Warcraft addons.
+# Template for World of Warcraft addons
 This is a template repository for World of Warcraft addons.
 Feel free to use this template as a starting point for your own addons or modify
 it to your own liking.
