@@ -20,8 +20,7 @@ jobs:
       - name: Copy documents to addon folders
         run:  |
           for d in addons/*/; do cp CHANGELOG.md ${d}CHANGELOG.md; done
-          test -f LICENSE.md && \
-          for d in addons/*/; do cp LICENSE.md ${d}LICENSE.md; done
+          if [ -f LICENSE.md ]; then for d in addons/*/; do cp LICENSE.md ${d}LICENSE.md; done fi
       - name: Create zip file
         uses: papeloto/action-zip@v1
         with:
